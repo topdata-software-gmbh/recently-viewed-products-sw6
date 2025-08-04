@@ -1,4 +1,7 @@
 .idea
 repomix-output.txt
+src/Resources/app/storefront/dist/storefront/
+src/Resources/public/administration/.vite/
+src/Resources/public/administration/assets/
 
 
