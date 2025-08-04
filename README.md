@@ -1,8 +1,25 @@
 # Recently Viewed Product Slider for Shopware 6
 
-## A plugin for [Shopware 6](https://github.com/shopware/platform)
+A plugin for [Shopware 6](https://github.com/shopware/platform) that displays a slider of products a customer has recently viewed. This helps increase customer engagement and conversion by reminding them of their interests.
 
-## Demo:
+For detailed instructions on installation, configuration, and usage, please refer to the [user manual](./manual/).
+
+## Features
+
+- **Shopping Experiences Integration**: Adds a "Recently Viewed Product Slider" block and element to the Shopping Experiences, allowing you to place the slider on any CMS page.
+- **Full Customization**: The slider element is highly customizable, with options for title, display mode, navigation, automatic sliding, borders, and more, similar to the standard product slider.
+- **Automatic Display**: The slider can be configured to automatically appear on:
+    - The bottom of every product detail page.
+    - The bottom of all other CMS pages.
+- **Centralized Configuration**:
+    - Set global defaults for all slider settings (e.g., title, display mode, number of items).
+    - Configure the maximum number of products to track.
+    - Choose to display products in chronological or random order.
+- **Smart Tracking**: Tracks recently viewed products for both logged-in customers and guest users. The history is automatically merged when a guest logs in.
+- **AJAX Loading**: Slider content is loaded asynchronously to ensure compatibility with full-page caching and improve performance.
+
+
+-## Demo:
 
 ![](https://media.giphy.com/media/VInadwfREBVz8QfIAI/giphy.gif)
 
@@ -12,28 +29,19 @@
 
 ![](https://user-images.githubusercontent.com/22548423/93248266-d4d59900-f7b9-11ea-9251-e6b160f24154.png)
 
-## Features
 
-- Add `Recently Viewed Product Slider` block in Shopping Experiences > Commerce.
-- Add `Recently Viewed Product Slider` element in Shopping Experiences.
-- `Recently Viewed Product Slider` element can be customize similar to product slider element.
-- (Optional) Show `Recently Viewed Product Slider` Default Element on bottom of every CMS page.
-- (Optional) Show `Recently Viewed Product Slider` Default Element on bottom of product detail.
-- `Recently Viewed Product Slider` Default Element can be modified in Plugin's config.
-- The maximum number of items shown on the element and their display order can be configured in the Plugin's config.
-
-## Upcoming
+## TODO
 - Recent products are shared between customer's devices.
 
 ## Requirements
 
-| Version 	   | Requirements               	 |
-|-------------|------------------------------|
+| Shopware Version | Plugin Version | Status       |
+|------------------|----------------|--------------|
 | 1.0.1    	  | Shopware 6.3 >= 6.4.10.0	    |
 | 1.2.0    	 | Shopware 6.4.11.0	           |
 
 ## License
-    
+
 Plugin's Icon by [flaticon](https://www.flaticon.com).
 
-The plugin is released under MIT. For a full overview check the [LICENSE](./LICENSE) file.
+The plugin is released under the MIT License. For a full overview, check the [LICENSE](./LICENSE) file.
