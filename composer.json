@@ -1,40 +1,40 @@
 {
-  "name": "vienthuong/recently-viewed-products",
-  "description": "Recently viewed products plugin",
-  "type": "shopware-platform-plugin",
-  "version": "4.0.0",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Thuong Le",
-      "email": "levienthuong@gmail.com"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "RecentlyViewedProduct\\": "src/"
-    }
-  },
-  "require": {
-    "shopware/core": "^6.6.0.0",
-    "shopware/storefront": "^6.6.0.0"
-  },
-  "extra": {
-    "shopware-plugin-class": "RecentlyViewedProduct\\RecentlyViewedProduct",
-    "plugin-icon": "src/Resources/config/plugin.png",
-    "copyright": "(c) by Thuong Le<levienthuong@gmail.com>",
-    "label": {
-      "de-DE": "Kürzlich angesehene Produkte für SW6",
-      "en-GB": "Recently viewed products for SW6"
+    "name":          "topdata/recently-viewed-products-sw6",
+    "description":   "Recently viewed products plugin",
+    "type":          "shopware-platform-plugin",
+    "version":       "1.0.0",
+    "license":       "MIT",
+    "authors":       [
+        {
+            "name":  "Thuong Le",
+            "email": "levienthuong@gmail.com"
+        },
+        {
+            "name":     "TopData Software GmbH",
+            "homepage": "https://www.topdata.de"
+        }
+    ],
+    "autoload":      {
+        "psr-4": {
+            "Topdata\\TopdataRecentlyViewedProductsSW6\\": "src/"
+        }
     },
-    "description": {
-      "de-DE": "Kunden kürzlich angesehene Produkte anzeigen",
-      "en-GB": "Show customer recently viewed products"
-    }
-  },
-    "conflict": {
-        "shopware/storefront": "<6,>=7",
-        "shopware/administration": "<6,>=7"
+    "require":       {
+        "shopware/core":       "6.6.*",
+        "shopware/storefront": "6.6.*"
+    },
+    "extra":         {
+        "shopware-plugin-class": "Topdata\\TopdataRecentlyViewedProductsSW6\\TopdataRecentlyViewedProductsSW6",
+        "plugin-icon":           "src/Resources/config/plugin.png",
+        "copyright":             "(c) by Thuong Le<levienthuong@gmail.com>",
+        "label":                 {
+            "de-DE": "Topdata Kürzlich angesehene Produkte",
+            "en-GB": "Todpdata Recently viewed products"
+        },
+        "description":           {
+            "de-DE": "Kunden kürzlich angesehene Produkte anzeigen",
+            "en-GB": "Show customer recently viewed products"
+        }
     },
     "prefer-stable": true
 }
