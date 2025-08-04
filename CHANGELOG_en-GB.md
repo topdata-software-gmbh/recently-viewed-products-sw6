@@ -1,4 +1,4 @@
-## 5.0.0
+## 2.0.0
 
 * Released: 2025-08-04
 * Compatibility: Only compatible with Shopware 6.7.0.0 and newer

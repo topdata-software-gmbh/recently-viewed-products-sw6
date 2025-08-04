@@ -24,7 +24,7 @@ The goal of this phase is to prepare the development environment and project str
         "name": "topdata/recently-viewed-products-sw6",
         "description": "Recently viewed products plugin",
         "type": "shopware-platform-plugin",
-        "version": "5.0.0",
+        "version": "2.0.0",
         "license": "MIT",
         "authors": [
             {
@@ -165,7 +165,7 @@ This phase is critical to verify all changes and ensure the plugin is stable.
 Finalize the plugin for a new major release.
 
 1.  **Update `CHANGELOG_de-DE.md` and `CHANGELOG_en-GB.md`:**
-    *   Add an entry for the new major version (e.g., `5.0.0`).
+    *   Add an entry for the new major version (e.g., `2.0.0`).
     *   Clearly state that this version is **only compatible with Shopware 6.7.0.0 and newer**.
     *   Mention the major breaking changes addressed.
 
@@ -174,6 +174,6 @@ Finalize the plugin for a new major release.
 
 3.  **Tag and Release:**
     *   Commit all changes to your Git repository.
-    *   Create a new version tag (e.g., `v5.0.0`).
+    *   Create a new version tag (e.g., `v2.0.0`).
     *   Prepare and upload the new version to the Shopware Store.
 
