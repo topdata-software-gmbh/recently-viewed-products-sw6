@@ -13,7 +13,17 @@ Component.register('sw-cms-el-config-recently-viewed-product-slider', {
 
     data() {
         return {
-            isLoading: false
+            isLoading: false,
+            displayModeOptions: [
+                { value: 'standard', label: this.$tc('sw-cms.elements.general.config.label.displayModeStandard') },
+                { value: 'cover', label: this.$tc('sw-cms.elements.general.config.label.displayModeCover') },
+                { value: 'contain', label: this.$tc('sw-cms.elements.general.config.label.displayModeContain') }
+            ],
+            verticalAlignOptions: [
+                { value: 'flex-start', label: this.$tc('sw-cms.elements.general.config.label.verticalAlignTop') },
+                { value: 'center', label: this.$tc('sw-cms.elements.general.config.label.verticalAlignCenter') },
+                { value: 'flex-end', label: this.$tc('sw-cms.elements.general.config.label.verticalAlignBottom') }
+            ]
         }
     },
 
@@ -26,7 +36,7 @@ Component.register('sw-cms-el-config-recently-viewed-product-slider', {
             if (this.element.isNew()) {
                 this.isLoading = true;
                 try {
-                    const prefix = 'RecentlyViewedProduct.config';
+                    const prefix = 'TopdataRecentlyViewedProductsSW6.config';
                     const defaultConfig = await this.systemConfigApiService.getValues(prefix);
 
                     Object.keys(this.element.config).forEach(configKey => {

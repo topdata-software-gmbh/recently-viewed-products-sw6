@@ -27,10 +27,10 @@
 
 ## Requirements
 
-| Version 	   | Requirements               	 |
-|-------------|------------------------------|
-| 1.0.1    	  | Shopware 6.3 >= 6.4.10.0	    |
-| 1.2.0    	 | Shopware 6.4.11.0	           |
+| Shopware Version | Plugin Version | Status      |
+|------------------|----------------|-------------|
+| >= 6.7.0.0       | 5.x.x          | Compatible  |
+| < 6.7.0.0        | 5.x.x          | Incompatible|
 
 ## License
     

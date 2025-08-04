@@ -21,7 +21,7 @@ The goal of this phase is to prepare the development environment and project str
     *   Modify `composer.json` to require the new Shopware version and update the plugin's version number.
       ```json
       {
-        "name": "vienthuong/recently-viewed-products",
+        "name": "topdata/recently-viewed-products-sw6",
         "description": "Recently viewed products plugin",
         "type": "shopware-platform-plugin",
         "version": "5.0.0",
@@ -34,7 +34,7 @@ The goal of this phase is to prepare the development environment and project str
         ],
         "autoload": {
             "psr-4": {
-                "RecentlyViewedProduct\\": "src/"
+                "TopdataRecentlyViewedProductsSW6\\": "src/"
             }
         },
         "require": {
@@ -42,7 +42,7 @@ The goal of this phase is to prepare the development environment and project str
             "shopware/storefront": "^6.7.0.0"
         },
         "extra": {
-          "shopware-plugin-class": "RecentlyViewedProduct\\RecentlyViewedProduct",
+          "shopware-plugin-class": "TopdataRecentlyViewedProductsSW6\\TopdataRecentlyViewedProductsSW6",
           "plugin-icon": "src/Resources/config/plugin.png",
           "copyright": "(c) by Thuong Le<levienthuong@gmail.com>",
           "label": {
@@ -84,7 +84,7 @@ This phase focuses on making the PHP codebase compatible with Shopware 6.7's cor
 
 2.  **Update Service Definitions:**
     *   **File:** `src/Resources/config/services.xml`
-    *   **Action:** Remove the `<call method="setTwig">` line from the `RecentlyViewedProduct\Controller\RecentProductController` service definition, as this method has been removed from the base `StorefrontController`.
+    *   **Action:** Remove the `<call method="setTwig">` line from the `Topdata\TopdataRecentlyViewedProductsSW6\Controller\RecentProductController` service definition, as this method has been removed from the base `StorefrontController`.
 
 3.  **Validate Decorator:**
     *   Carefully check the constructor signature of the original `Shopware\Core\System\SalesChannel\Context\SalesChannelContextPersister` in Shopware 6.7.
@@ -97,7 +97,7 @@ This is the most significant phase due to the migration to Vite, Vue 3, and the 
 1.  **Automated Component Migration:**
     *   From the Shopware root directory, run the official codemod tool to automate the replacement of deprecated `sw-` components.
       ```bash
-      composer run admin:code-mods -- --plugin-name RecentlyViewedProduct --fix -v 6.7
+      composer run admin:code-mods -- --plugin-name TopdataRecentlyViewedProductsSW6 --fix -v 6.7
       ```
 
 2.  **Manual UI Adjustments & Review:**

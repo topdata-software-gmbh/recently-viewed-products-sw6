@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Controller;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Controller;
 
-use RecentlyViewedProduct\Service\RecentlyViewedProductService;
+use Topdata\TopdataRecentlyViewedProductsSW6\Service\RecentlyViewedProductService;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\Uuid\Uuid;

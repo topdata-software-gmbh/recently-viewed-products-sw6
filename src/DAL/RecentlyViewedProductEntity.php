@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\DAL;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL;
 
-use RecentlyViewedProduct\Struct\RecentProductCollection;
+use Topdata\TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 

@@ -15,22 +15,18 @@
                 {% endblock %}
 
                 {% block sw_cms_element_recently_seen_product_slider_config_settings_display_mode %}
-                    <sw-select-field :label="$tc('sw-cms.elements.general.config.label.displayMode')"
-                                     v-model="element.config.displayMode.value">
-                        <option value="standard">{{ $tc('sw-cms.elements.general.config.label.displayModeStandard') }}</option>
-                        <option value="cover">{{ $tc('sw-cms.elements.general.config.label.displayModeCover') }}</option>
-                        <option value="contain">{{ $tc('sw-cms.elements.general.config.label.displayModeContain') }}</option>
-                    </sw-select-field>
+                    <mt-select :label="$tc('sw-cms.elements.general.config.label.displayMode')"
+                               v-model="element.config.displayMode.value"
+                               :options="displayModeOptions">
+                    </mt-select>
                 {% endblock %}
 
                 {% block sw_cms_element_recently_seen_product_slider_config_settings_vertical_align %}
-                    <sw-select-field :label="$tc('sw-cms.elements.general.config.label.verticalAlign')"
-                                     v-model="element.config.verticalAlign.value"
-                                     :placeholder="$tc('sw-cms.elements.general.config.label.verticalAlign')">
-                        <option value="flex-start">{{ $tc('sw-cms.elements.general.config.label.verticalAlignTop') }}</option>
-                        <option value="center">{{ $tc('sw-cms.elements.general.config.label.verticalAlignCenter') }}</option>
-                        <option value="flex-end">{{ $tc('sw-cms.elements.general.config.label.verticalAlignBottom') }}</option>
-                    </sw-select-field>
+                    <mt-select :label="$tc('sw-cms.elements.general.config.label.verticalAlign')"
+                               v-model="element.config.verticalAlign.value"
+                               :placeholder="$tc('sw-cms.elements.general.config.label.verticalAlign')"
+                               :options="verticalAlignOptions">
+                    </mt-select>
                 {% endblock %}
 
                 {% block sw_cms_element_recently_seen_product_slider_config_settings_navigation %}

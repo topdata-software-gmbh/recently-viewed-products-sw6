@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Subscriber\Storefront;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Subscriber\Storefront;
 
-use RecentlyViewedProduct\Service\RecentlyViewedProductService;
+use Topdata\TopdataRecentlyViewedProductsSW6\Service\RecentlyViewedProductService;
 use Shopware\Core\Content\Product\ProductEntity;
 use Shopware\Storefront\Page\Product\ProductPageLoadedEvent;
 use Shopware\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoadedEvent;
@@ -10,10 +10,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ProductPageLoaderSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var RecentlyViewedProductService
-     */
-    private $recentlyViewedProductService;
+    private readonly RecentlyViewedProductService $recentlyViewedProductService;
 
     public function __construct(
         RecentlyViewedProductService $recentlyViewedProductService

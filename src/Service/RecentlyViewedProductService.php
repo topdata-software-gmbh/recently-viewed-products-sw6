@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Service;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Service;
 
-use RecentlyViewedProduct\RecentlyViewedProduct;
-use RecentlyViewedProduct\Struct\RecentProductCollection;
+use Topdata\TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
+use Topdata\TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\FieldConfig;
 use Shopware\Core\Content\Cms\DataResolver\FieldConfigCollection;
@@ -22,36 +22,22 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 
 class RecentlyViewedProductService
 {
-    /**
-     * @var EntityRepository
-     */
-    private $rpvRepository;
+    private readonly EntityRepository $rpvRepository;
 
-    /**
-     * @var SystemConfigService
-     */
-    private $systemConfigService;
+    private readonly SystemConfigService $systemConfigService;
 
-    /**
-     * @var null|RecentProductCollection
-     */
-    private $recentProducts;
+    private ?RecentProductCollection $recentProducts = null;
 
-    /**
-     * @var null|ProductCollection
-     */
-    private $productEntities;
+    private ?ProductCollection $productEntities = null;
 
-    /**
-     * @var SalesChannelRepository
-     */
-    private $salesChannelProductRepository;
+    private readonly SalesChannelRepository $salesChannelProductRepository;
 
     public function __construct(
-        EntityRepository $rpvRepository,
-        SystemConfigService $systemConfigService,
+        EntityRepository       $rpvRepository,
+        SystemConfigService    $systemConfigService,
         SalesChannelRepository $salesChannelProductRepository
-    ) {
+    )
+    {
         $this->rpvRepository = $rpvRepository;
         $this->systemConfigService = $systemConfigService;
         $this->salesChannelProductRepository = $salesChannelProductRepository;
@@ -70,7 +56,7 @@ class RecentlyViewedProductService
 
         $this->recentProducts = $result->first() ? $result->first()->getRecentProduct() : new RecentProductCollection();
 
-        $showInRandomOrder = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config.showInRandomOrder', $context->getSalesChannel()->getId()) ?? false;
+        $showInRandomOrder = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config.showInRandomOrder', $context->getSalesChannel()->getId()) ?? false;
 
         if (!$forceInOrder && $showInRandomOrder) {
             return $this->recentProducts->shuffle();
@@ -90,15 +76,15 @@ class RecentlyViewedProductService
         $productIndex = $contextRecentProducts->findIndex($productId);
 
         if ($contextRecentProducts->has($productIndex)) {
-            $contextRecentProducts->remove((string) $productIndex);
+            $contextRecentProducts->remove((string)$productIndex);
         }
 
         $contextRecentProducts->unshift($productId);
 
-        $maximumItems = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config.maximumItems', $context->getSalesChannel()->getId()) ?? RecentlyViewedProduct::DEFAULT_MAXIMUM_VIEWED_PRODUCTS;
+        $maximumItems = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config.maximumItems', $context->getSalesChannel()->getId()) ?? TopdataRecentlyViewedProductsSW6::DEFAULT_MAXIMUM_VIEWED_PRODUCTS;
 
         if ($contextRecentProducts->count() > $maximumItems) {
-            $contextRecentProducts->remove((string) $contextRecentProducts->findIndex($contextRecentProducts->last()));
+            $contextRecentProducts->remove((string)$contextRecentProducts->findIndex($contextRecentProducts->last()));
         }
 
         $this->saveRecentProductCollection($contextRecentProducts, $context);
@@ -111,7 +97,7 @@ class RecentlyViewedProductService
     public function saveRecentProductCollection(RecentProductCollection $recentProductCollection, SalesChannelContext $context): void
     {
         $this->rpvRepository->upsert([[
-            'token' => $context->getToken(),
+            'token'         => $context->getToken(),
             'recentProduct' => $recentProductCollection,
         ]], $context->getContext());
     }
@@ -159,10 +145,10 @@ class RecentlyViewedProductService
     public function buildPseudoElement(SalesChannelContext $context): CmsSlotEntity
     {
         /** @var array $pluginConfig */
-        $pluginConfig = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config', $context->getSalesChannel()->getId());
+        $pluginConfig = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config', $context->getSalesChannel()->getId());
 
         $pseudoSlot = new CmsSlotEntity();
-        $pseudoSlot->setType(RecentlyViewedProduct::RECENTLY_VIEWED_PRODUCT_TYPE);
+        $pseudoSlot->setType(TopdataRecentlyViewedProductsSW6::RECENTLY_VIEWED_PRODUCT_TYPE);
         $pseudoSlot->setSlot('recentlyViewedProductSlider');
         $pseudoSlot->setLocked(false);
 
@@ -177,7 +163,7 @@ class RecentlyViewedProductService
         $pseudoSlot->setConfig(\array_map(function ($config) {
             return [
                 'source' => 'static',
-                'value' => $config,
+                'value'  => $config,
             ];
         }, $pluginConfig));
 

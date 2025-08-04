@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Core\System\SalesChannel\Context;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Core\System\SalesChannel\Context;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Checkout\Cart\CartPersister;
@@ -10,15 +10,9 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class SalesChannelContextPersisterDecorated extends SalesChannelContextPersister
 {
-    /**
-     * @var SalesChannelContextPersister
-     */
-    private $decorated;
+    private readonly SalesChannelContextPersister $decorated;
 
-    /**
-     * @var Connection
-     */
-    private $connection;
+    private readonly Connection $connection;
 
     public function __construct(
         SalesChannelContextPersister $decorated,
@@ -37,7 +31,7 @@ class SalesChannelContextPersisterDecorated extends SalesChannelContextPersister
     {
         $newToken = $this->decorated->replace($oldToken, $context);
 
-        $this->connection->executeUpdate(
+        $this->connection->executeStatement(
             'UPDATE `recently_viewed_product`
                    SET `token` = :newToken
                    WHERE `token` = :oldToken',
@@ -54,7 +48,7 @@ class SalesChannelContextPersisterDecorated extends SalesChannelContextPersister
     {
         $this->decorated->delete($token, $salesChannelId, $customerId);
 
-        $this->connection->executeUpdate(
+        $this->connection->executeStatement(
             'DELETE FROM recently_viewed_product WHERE token = :token',
             [
                 'token' => $token,

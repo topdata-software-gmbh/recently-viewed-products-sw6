@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Subscriber\Storefront;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Subscriber\Storefront;
 
-use RecentlyViewedProduct\RecentlyViewedProduct;
-use RecentlyViewedProduct\Service\RecentlyViewedProductService;
+use Topdata\TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
+use Topdata\TopdataRecentlyViewedProductsSW6\Service\RecentlyViewedProductService;
 use Shopware\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Shopware\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Shopware\Core\Content\Cms\Aggregate\CmsSection\CmsSectionCollection;
@@ -18,15 +18,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class CmsPageLoaderSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var RecentlyViewedProductService
-     */
-    private $recentlyViewedProductService;
+    private readonly RecentlyViewedProductService $recentlyViewedProductService;
 
-    /**
-     * @var SystemConfigService
-     */
-    private $systemConfigService;
+    private readonly SystemConfigService $systemConfigService;
 
     public function __construct(
         RecentlyViewedProductService $recentlyViewedProductService,
@@ -52,7 +46,7 @@ class CmsPageLoaderSubscriber implements EventSubscriberInterface
             $result = $event->getResult();
 
             /** @var array $pluginConfig */
-            $pluginConfig = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config', $context->getSalesChannel()->getId());
+            $pluginConfig = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config', $context->getSalesChannel()->getId());
 
             if (empty($pluginConfig) || $pluginConfig['autoShowOnCmsPage'] === false) {
                 return;
@@ -98,7 +92,7 @@ class CmsPageLoaderSubscriber implements EventSubscriberInterface
             }
 
             $pseudoSliderBlock = CmsBlockEntity::createFrom($referenceBlock);
-            $pseudoSliderBlock->setType(RecentlyViewedProduct::RECENTLY_VIEWED_PRODUCT_TYPE);
+            $pseudoSliderBlock->setType(TopdataRecentlyViewedProductsSW6::RECENTLY_VIEWED_PRODUCT_TYPE);
             $pseudoSliderBlock->setSectionId($cmsPageSection->getId());
             $pseudoSliderBlock->setUniqueIdentifier(Uuid::randomHex());
             $pseudoSliderBlock->setId(Uuid::randomHex());

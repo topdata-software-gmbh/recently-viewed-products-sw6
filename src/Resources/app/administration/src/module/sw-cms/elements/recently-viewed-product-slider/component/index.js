@@ -108,7 +108,8 @@ Component.register('sw-cms-el-recently-viewed-product-slider', {
             this.initElementData('recently-viewed-product-slider');
         },
 
-        mountedComponent() {
+        async mountedComponent() {
+            await this.$nextTick();
             this.setSliderRowLimit();
         },
 

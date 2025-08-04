@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct;
+namespace Topdata\TopdataRecentlyViewedProductsSW6;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Context;
@@ -10,9 +10,9 @@ use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\Plugin;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
-class RecentlyViewedProduct extends Plugin
+class TopdataRecentlyViewedProductsSW6 extends Plugin
 {
-    public const PLUGIN_NAME = 'RecentlyViewedProduct';
+    public const PLUGIN_NAME = 'TopdataRecentlyViewedProductsSW6';
     public const DEFAULT_MAXIMUM_VIEWED_PRODUCTS = 10;
     public const RECENTLY_VIEWED_PRODUCT_TYPE = 'recently-viewed-product-slider';
 

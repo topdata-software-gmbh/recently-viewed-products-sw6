@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Struct;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Struct;
 
 use Shopware\Core\Framework\Struct\Collection;
 
