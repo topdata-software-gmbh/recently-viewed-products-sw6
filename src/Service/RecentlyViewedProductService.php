@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Service;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Service;
 
-use RecentlyViewedProduct\RecentlyViewedProduct;
-use RecentlyViewedProduct\Struct\RecentProductCollection;
+use TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
+use TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\FieldConfig;
 use Shopware\Core\Content\Cms\DataResolver\FieldConfigCollection;
@@ -70,7 +70,7 @@ class RecentlyViewedProductService
 
         $this->recentProducts = $result->first() ? $result->first()->getRecentProduct() : new RecentProductCollection();
 
-        $showInRandomOrder = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config.showInRandomOrder', $context->getSalesChannel()->getId()) ?? false;
+        $showInRandomOrder = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config.showInRandomOrder', $context->getSalesChannel()->getId()) ?? false;
 
         if (!$forceInOrder && $showInRandomOrder) {
             return $this->recentProducts->shuffle();
@@ -95,7 +95,7 @@ class RecentlyViewedProductService
 
         $contextRecentProducts->unshift($productId);
 
-        $maximumItems = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config.maximumItems', $context->getSalesChannel()->getId()) ?? RecentlyViewedProduct::DEFAULT_MAXIMUM_VIEWED_PRODUCTS;
+        $maximumItems = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config.maximumItems', $context->getSalesChannel()->getId()) ?? TopdataRecentlyViewedProductsSW6::DEFAULT_MAXIMUM_VIEWED_PRODUCTS;
 
         if ($contextRecentProducts->count() > $maximumItems) {
             $contextRecentProducts->remove((string) $contextRecentProducts->findIndex($contextRecentProducts->last()));
@@ -159,10 +159,10 @@ class RecentlyViewedProductService
     public function buildPseudoElement(SalesChannelContext $context): CmsSlotEntity
     {
         /** @var array $pluginConfig */
-        $pluginConfig = $this->systemConfigService->get(RecentlyViewedProduct::PLUGIN_NAME . '.config', $context->getSalesChannel()->getId());
+        $pluginConfig = $this->systemConfigService->get(TopdataRecentlyViewedProductsSW6::PLUGIN_NAME . '.config', $context->getSalesChannel()->getId());
 
         $pseudoSlot = new CmsSlotEntity();
-        $pseudoSlot->setType(RecentlyViewedProduct::RECENTLY_VIEWED_PRODUCT_TYPE);
+        $pseudoSlot->setType(TopdataRecentlyViewedProductsSW6::RECENTLY_VIEWED_PRODUCT_TYPE);
         $pseudoSlot->setSlot('recentlyViewedProductSlider');
         $pseudoSlot->setLocked(false);
 

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\DAL;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL;
 
-use RecentlyViewedProduct\DAL\Field\RecentProductField;
+use TopdataRecentlyViewedProductsSW6\DAL\Field\RecentProductField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\IdField;

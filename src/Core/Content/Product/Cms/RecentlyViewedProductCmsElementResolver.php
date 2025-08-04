@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Core\Content\Product\Cms;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Core\Content\Product\Cms;
 
-use RecentlyViewedProduct\RecentlyViewedProduct;
+use TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\CriteriaCollection;
 use Shopware\Core\Content\Cms\DataResolver\Element\AbstractCmsElementResolver;
@@ -17,7 +17,7 @@ class RecentlyViewedProductCmsElementResolver extends AbstractCmsElementResolver
 {
     public function getType(): string
     {
-        return RecentlyViewedProduct::RECENTLY_VIEWED_PRODUCT_TYPE;
+        return TopdataRecentlyViewedProductsSW6::RECENTLY_VIEWED_PRODUCT_TYPE;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Core\System\SalesChannel\Context;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Core\System\SalesChannel\Context;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Checkout\Cart\CartPersister;

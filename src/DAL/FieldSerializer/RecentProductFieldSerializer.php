@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\DAL\FieldSerializer;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL\FieldSerializer;
 
-use RecentlyViewedProduct\DAL\Field\RecentProductField;
-use RecentlyViewedProduct\Struct\RecentProductCollection;
+use TopdataRecentlyViewedProductsSW6\DAL\Field\RecentProductField;
+use TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\Exception\InvalidSerializerFieldException;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Field;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldSerializer\JsonFieldSerializer;

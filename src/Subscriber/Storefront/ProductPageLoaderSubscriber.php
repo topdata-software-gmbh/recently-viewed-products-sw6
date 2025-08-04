@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\Subscriber\Storefront;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\Subscriber\Storefront;
 
-use RecentlyViewedProduct\Service\RecentlyViewedProductService;
+use TopdataRecentlyViewedProductsSW6\Service\RecentlyViewedProductService;
 use Shopware\Core\Content\Product\ProductEntity;
 use Shopware\Storefront\Page\Product\ProductPageLoadedEvent;
 use Shopware\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoadedEvent;

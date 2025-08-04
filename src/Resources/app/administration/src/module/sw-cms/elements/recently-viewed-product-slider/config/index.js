@@ -26,7 +26,7 @@ Component.register('sw-cms-el-config-recently-viewed-product-slider', {
             if (this.element.isNew()) {
                 this.isLoading = true;
                 try {
-                    const prefix = 'RecentlyViewedProduct.config';
+                    const prefix = 'TopdataRecentlyViewedProductsSW6.config';
                     const defaultConfig = await this.systemConfigApiService.getValues(prefix);
 
                     Object.keys(this.element.config).forEach(configKey => {

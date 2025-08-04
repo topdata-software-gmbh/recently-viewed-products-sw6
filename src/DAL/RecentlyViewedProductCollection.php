@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace RecentlyViewedProduct\DAL;
+namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL;
 
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
