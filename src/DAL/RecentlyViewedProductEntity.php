@@ -2,7 +2,7 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL;
 
-use TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
+use Topdata\TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 

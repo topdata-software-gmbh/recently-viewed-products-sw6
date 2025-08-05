@@ -2,7 +2,7 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL;
 
-use TopdataRecentlyViewedProductsSW6\DAL\Field\RecentProductField;
+use Topdata\TopdataRecentlyViewedProductsSW6\DAL\Field\RecentProductField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\IdField;

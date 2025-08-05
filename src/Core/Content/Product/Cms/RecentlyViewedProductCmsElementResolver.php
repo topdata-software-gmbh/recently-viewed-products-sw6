@@ -2,7 +2,7 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\Core\Content\Product\Cms;
 
-use TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
+use Topdata\TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\CriteriaCollection;
 use Shopware\Core\Content\Cms\DataResolver\Element\AbstractCmsElementResolver;

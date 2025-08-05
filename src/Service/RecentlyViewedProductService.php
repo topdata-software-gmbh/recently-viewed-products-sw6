@@ -2,8 +2,8 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\Service;
 
-use TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
-use TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
+use Topdata\TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
+use Topdata\TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\FieldConfig;
 use Shopware\Core\Content\Cms\DataResolver\FieldConfigCollection;

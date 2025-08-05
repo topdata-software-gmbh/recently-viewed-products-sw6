@@ -2,7 +2,7 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL\Field;
 
-use TopdataRecentlyViewedProductsSW6\DAL\FieldSerializer\RecentProductFieldSerializer;
+use Topdata\TopdataRecentlyViewedProductsSW6\DAL\FieldSerializer\RecentProductFieldSerializer;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\JsonField;
 
 class RecentProductField extends JsonField

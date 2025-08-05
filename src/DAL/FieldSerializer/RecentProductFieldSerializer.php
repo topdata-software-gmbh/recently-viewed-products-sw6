@@ -2,8 +2,8 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\DAL\FieldSerializer;
 
-use TopdataRecentlyViewedProductsSW6\DAL\Field\RecentProductField;
-use TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
+use Topdata\TopdataRecentlyViewedProductsSW6\DAL\Field\RecentProductField;
+use Topdata\TopdataRecentlyViewedProductsSW6\Struct\RecentProductCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\Exception\InvalidSerializerFieldException;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Field;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldSerializer\JsonFieldSerializer;

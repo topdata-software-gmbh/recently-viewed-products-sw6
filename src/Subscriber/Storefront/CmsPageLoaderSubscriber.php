@@ -2,8 +2,8 @@
 
 namespace Topdata\TopdataRecentlyViewedProductsSW6\Subscriber\Storefront;
 
-use TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
-use TopdataRecentlyViewedProductsSW6\Service\RecentlyViewedProductService;
+use Topdata\TopdataRecentlyViewedProductsSW6\TopdataRecentlyViewedProductsSW6;
+use Topdata\TopdataRecentlyViewedProductsSW6\Service\RecentlyViewedProductService;
 use Shopware\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Shopware\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Shopware\Core\Content\Cms\Aggregate\CmsSection\CmsSectionCollection;
