@@ -19,7 +19,7 @@ For detailed instructions on installation, configuration, and usage, please refe
 - **AJAX Loading**: Slider content is loaded asynchronously to ensure compatibility with full-page caching and improve performance.
 
 
--## Demo:
+## Demo:
 
 ![](https://media.giphy.com/media/VInadwfREBVz8QfIAI/giphy.gif)
 
